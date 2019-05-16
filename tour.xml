@@ -1,0 +1,212 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	 <include url="skin/vtourskin_design_ultra_light.xml" /> 
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+	
+
+	<scene name="scene_naarden-360-v3-0002" title="naarden-360-v3-0002" onstart="" thumburl="panos/naarden-360-v3-0002.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="149.855" vlookat="7.584" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0002.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0002.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0002.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-24.012" atv="8.916" linkedscene="scene_naarden-360-v3-0001" />
+
+	</scene>
+<scene name="scene_naarden-360-v3-0001" title="naarden-360-v3-0001" onstart="" thumburl="panos/naarden-360-v3-0001.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="131.871" vlookat="5.989" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0001.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0001.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0001.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="171.939" atv="7.953" linkedscene="scene_naarden-360-v3-0003" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="151.054" atv="8.411" linkedscene="scene_naarden-360-v3-0002" />
+
+	</scene>
+	<scene name="scene_naarden-360-v3-0003" title="naarden-360-v3-0003" onstart="" thumburl="panos/naarden-360-v3-0003.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="359.723" vlookat="4.565" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0003.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0003.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0003.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="8.886" atv="4.417" linkedscene="scene_naarden-360-v3-0001" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="20.863" atv="4.178" linkedscene="scene_naarden-360-v3-0002" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-21.860" atv="-26.527" linkedscene="scene_naarden-360-v3-0004" />
+
+	</scene>
+
+	<scene name="scene_naarden-360-v3-0004" title="naarden-360-v3-0004" onstart="" thumburl="panos/naarden-360-v3-0004.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="221.317" vlookat="12.801" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0004.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0004.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0004.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="74.335" atv="18.625" linkedscene="scene_naarden-360-v3-0005" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="162.251" atv="14.803" linkedscene="scene_naarden-360-v3-0006" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-153.619" atv="12.198" linkedscene="scene_naarden-360-v3-0007" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-87.546" atv="38.114" linkedscene="scene_naarden-360-v3-0003" />
+
+	</scene>
+
+	<scene name="scene_naarden-360-v3-0005" title="naarden-360-v3-0005" onstart="" thumburl="panos/naarden-360-v3-0005.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="288.506" vlookat="6.311" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0005.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0005.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0005.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-125.843" atv="14.853" linkedscene="scene_naarden-360-v3-0004" />
+
+	</scene>
+
+	<scene name="scene_naarden-360-v3-0006" title="naarden-360-v3-0006" onstart="" thumburl="panos/naarden-360-v3-0006.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-155.945" vlookat="3.806" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0006.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0006.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0006.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-54.011" atv="12.002" linkedscene="scene_naarden-360-v3-0004" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-58.760" atv="-15.526" linkedscene="scene_naarden-360-v3-0007" />
+
+	</scene>
+
+	<scene name="scene_naarden-360-v3-0007" title="naarden-360-v3-0007" onstart="" thumburl="panos/naarden-360-v3-0007.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-415.095" vlookat="1.278" fovtype="MFOV" fov="125.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/naarden-360-v3-0007.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/naarden-360-v3-0007.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/naarden-360-v3-0007.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-89.478" atv="11.900" linkedscene="scene_naarden-360-v3-0004" />
+
+	</scene>
+
+
+</krpano>
